@@ -13,9 +13,9 @@ const AuthNavigator = props =>{
     const Stack = createStackNavigator();
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="SignUp" screenOptions={{headerShown:false}}>
-                <Stack.Screen name={SIGNUP} component={SignUp}/>
+            <Stack.Navigator initialRouteName="Login" screenOptions={{headerShown:false}}>
                 <Stack.Screen name={LOGIN} component={Login}/>
+                <Stack.Screen name={SIGNUP} component={SignUp}/>
             </Stack.Navigator>
         </NavigationContainer>
     );

@@ -11,18 +11,16 @@ const Input = props => {
     return(
         <View style={styles.outer_container}>
             {props.label && <Text style={styles.label}>{props.label}</Text>}
-            <View style={styles.input_outer_container}>
+            <View style={[styles.input_outer_container, focused? {borderColor:"#1b8cb5"}: {borderColor:"grey"}]}>
                 <TextInput
-                    style={[styles.input, focused? {borderColor:"blue"}: {borderColor:"grey"}]}
+                    style={[styles.input]}
                     onChangeText={props.onChangeText}
                     value={props.value}
                     placeholder={props.placeholder}
-                    onFocus={()=>{
-                        setFocused(true);
-                    }}
-                    onBlur={()=>{
-                        setFocused(false);
-                    }}
+                    onFocus={()=>{setFocused(true);}}
+                    onBlur={()=>{setFocused(false);}}
+                    placeholderTextColor={"grey"}
+                    secureTextEntry={props.secureText}
                 />
                 {props.icon && <Icon name={props.icon} size={30} color="blue"/>}
             </View>
@@ -35,10 +33,8 @@ export default Input;
 
 const styles = StyleSheet.create({
     input:{
-        
-        marginTop:2,
-        height:55,
-        paddingHorizontal:10,
+        height:50,
+        // paddingHorizontal:2,
         width:"85%",
     },
     label:{
