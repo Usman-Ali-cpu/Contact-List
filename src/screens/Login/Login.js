@@ -5,11 +5,12 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import Input from '../../components/Input/Input';
 import { LOGIN, SIGNUP } from '../../constants/routesName';
-
+import devEnviroment from '../../../config';
 
 const Login = props =>{
     const navigator = useNavigation();
     const [text, onChangeText] = React.useState("");
+    console.log("Backend-> ", devEnviroment.DEV_BACKEND_URL);
     const [Password, onChangePassword] = React.useState("");
     return(
         <View style={styles.login_container}>
